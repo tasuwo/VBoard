@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  VBoard
+
+  Created by Tasuku Tozawa on 2020/01/14.
+  Copyright © 2020 Tasuku Tozawa. All rights reserved.
+*/
+
+"Tabbar.search" = "検索";
+
+"SearchView.title" = "検索";
