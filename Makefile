@@ -1,6 +1,6 @@
 SWIFT_FORMAT           := ./Pods/SwiftFormat/CommandLineTool/swiftformat
 SWIFT_FORMAT_CONFIG    := .swiftformat
-FORMAT_TARGETS         := VBoard VBoardTests
+FORMAT_TARGETS         := VBoard VBoardTests Infrastructure InfrastructureTests
 FORMAT_EXCLUDE_TARGETS := Pods
 
 format: swiftformat_format ## 各種フォーマッターをかける
