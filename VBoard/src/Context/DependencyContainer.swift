@@ -2,6 +2,8 @@
 //  Copyright © 2020 Tasuku Tozawa. All rights reserved.
 //
 
+import Infrastructure
+
 class DependencyContainer {}
 
 extension DependencyContainer: ViewControllerFactory {
@@ -12,6 +14,12 @@ extension DependencyContainer: ViewControllerFactory {
     }
 
     func makeSearchViewController() -> SearchViewControllerProtocol {
-        return SearchViewController(factory: self)
+        let viewModel = SearchViewModel()
+        return SearchViewController(factory: self, viewModel: viewModel)
+    }
+
+    func makeSearchResultViewController(query: String) -> SearchResultViewControllerProtocol {
+        let viewModel = SearchResultViewModel(service: SearchService(), query: query)
+        return SearchResultViewController(factory: self, viewModel: viewModel)
     }
 }

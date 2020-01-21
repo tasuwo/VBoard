@@ -5,4 +5,5 @@
 protocol ViewControllerFactory {
     func makeAppRootTabBarController() -> AppRootTabBarControllerProtocol
     func makeSearchViewController() -> SearchViewControllerProtocol
+    func makeSearchResultViewController(query: String) -> SearchResultViewControllerProtocol
 }

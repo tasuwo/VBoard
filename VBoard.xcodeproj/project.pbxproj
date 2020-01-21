@@ -25,6 +25,18 @@
 		2C05417423D61ED5004974B4 /* SearchQuerySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05417323D61ED5004974B4 /* SearchQuerySpec.swift */; };
 		2C05417623D62A06004974B4 /* SearchRequest+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05417523D62A06004974B4 /* SearchRequest+Init.swift */; };
 		2C05417823D62B1B004974B4 /* SearchResponse+ConvertToDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05417723D62B1B004974B4 /* SearchResponse+ConvertToDomainModel.swift */; };
+		2C05417B23D69DEC004974B4 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C05417A23D69DEC004974B4 /* SearchViewController.xib */; };
+		2C05417E23D6A001004974B4 /* SearchHistoriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05417D23D6A001004974B4 /* SearchHistoriesListView.swift */; };
+		2C05418023D73B4E004974B4 /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C05417F23D73B4E004974B4 /* SearchHistoryCell.xib */; };
+		2C05418223D73BD0004974B4 /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418123D73BD0004974B4 /* SearchHistoryCell.swift */; };
+		2C05418623D74F7D004974B4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418523D74F7D004974B4 /* SearchViewModel.swift */; };
+		2C05418823D754BB004974B4 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418723D754BB004974B4 /* SearchResultViewController.swift */; };
+		2C05418A23D75515004974B4 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418923D75515004974B4 /* SearchResultViewModel.swift */; };
+		2C05418C23D75ADC004974B4 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C05418B23D75ADC004974B4 /* SearchResultViewController.xib */; };
+		2C05418E23D75BB6004974B4 /* SearchResultsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418D23D75BB6004974B4 /* SearchResultsListView.swift */; };
+		2C05419023D7602D004974B4 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05418F23D7602D004974B4 /* SearchResultCell.swift */; };
+		2C05419223D76048004974B4 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C05419123D76048004974B4 /* SearchResultCell.xib */; };
+		2C05419423D7692F004974B4 /* ThumbnailDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C05419323D7692F004974B4 /* ThumbnailDownloader.swift */; };
 		2C60AF4123CCB1CD00A909EA /* AppRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */; };
 		2C60AF4323CCB38200A909EA /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF4223CCB38200A909EA /* DependencyContainer.swift */; };
 		2C60AF4723CCB77400A909EA /* AppRootViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF4623CCB77400A909EA /* AppRootViewControllerSpec.swift */; };
@@ -161,6 +173,18 @@
 		2C05417323D61ED5004974B4 /* SearchQuerySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuerySpec.swift; sourceTree = "<group>"; };
 		2C05417523D62A06004974B4 /* SearchRequest+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchRequest+Init.swift"; sourceTree = "<group>"; };
 		2C05417723D62B1B004974B4 /* SearchResponse+ConvertToDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchResponse+ConvertToDomainModel.swift"; sourceTree = "<group>"; };
+		2C05417A23D69DEC004974B4 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		2C05417D23D6A001004974B4 /* SearchHistoriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoriesListView.swift; sourceTree = "<group>"; };
+		2C05417F23D73B4E004974B4 /* SearchHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
+		2C05418123D73BD0004974B4 /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		2C05418523D74F7D004974B4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		2C05418723D754BB004974B4 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		2C05418923D75515004974B4 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
+		2C05418B23D75ADC004974B4 /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
+		2C05418D23D75BB6004974B4 /* SearchResultsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsListView.swift; sourceTree = "<group>"; };
+		2C05418F23D7602D004974B4 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		2C05419123D76048004974B4 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		2C05419323D7692F004974B4 /* ThumbnailDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailDownloader.swift; sourceTree = "<group>"; };
 		2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootTabBarController.swift; sourceTree = "<group>"; };
 		2C60AF4223CCB38200A909EA /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		2C60AF4623CCB77400A909EA /* AppRootViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -350,6 +374,45 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		2C05417923D69DB7004974B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2C05417C23D69FEF004974B4 /* Search */,
+				2C05419323D7692F004974B4 /* ThumbnailDownloader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2C05417C23D69FEF004974B4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2C05417D23D6A001004974B4 /* SearchHistoriesListView.swift */,
+				2C05417F23D73B4E004974B4 /* SearchHistoryCell.xib */,
+				2C05418123D73BD0004974B4 /* SearchHistoryCell.swift */,
+				2C05418D23D75BB6004974B4 /* SearchResultsListView.swift */,
+				2C05419123D76048004974B4 /* SearchResultCell.xib */,
+				2C05418F23D7602D004974B4 /* SearchResultCell.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		2C05418323D74F57004974B4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2C05418423D74F65004974B4 /* Search */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2C05418423D74F65004974B4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2C05418523D74F7D004974B4 /* SearchViewModel.swift */,
+				2C05418923D75515004974B4 /* SearchResultViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		2C60AF4423CCB46C00A909EA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +443,9 @@
 			isa = PBXGroup;
 			children = (
 				2C60AF4F23CCC2D900A909EA /* SearchViewController.swift */,
+				2C05417A23D69DEC004974B4 /* SearchViewController.xib */,
+				2C05418723D754BB004974B4 /* SearchResultViewController.swift */,
+				2C05418B23D75ADC004974B4 /* SearchResultViewController.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -532,7 +598,9 @@
 			isa = PBXGroup;
 			children = (
 				2CD9D5B223CCAFDC0061594E /* Context */,
+				2C05417923D69DB7004974B4 /* View */,
 				2CD9D5B523CCB02D0061594E /* Controller */,
+				2C05418323D74F57004974B4 /* ViewModel */,
 				2CD9D58C23CCADBE0061594E /* AppDelegate.swift */,
 			);
 			path = src;
@@ -841,7 +909,11 @@
 			files = (
 				2CD9D59923CCADC10061594E /* LaunchScreen.storyboard in Resources */,
 				2C60AF5623CCC70D00A909EA /* Localizable.strings in Resources */,
+				2C05417B23D69DEC004974B4 /* SearchViewController.xib in Resources */,
+				2C05418C23D75ADC004974B4 /* SearchResultViewController.xib in Resources */,
 				2CD9D59623CCADC10061594E /* Assets.xcassets in Resources */,
+				2C05418023D73B4E004974B4 /* SearchHistoryCell.xib in Resources */,
+				2C05419223D76048004974B4 /* SearchResultCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1110,10 +1182,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CD9D5B423CCAFF30061594E /* Factory.swift in Sources */,
+				2C05419423D7692F004974B4 /* ThumbnailDownloader.swift in Sources */,
+				2C05418E23D75BB6004974B4 /* SearchResultsListView.swift in Sources */,
+				2C05418A23D75515004974B4 /* SearchResultViewModel.swift in Sources */,
 				2C60AF5023CCC2D900A909EA /* SearchViewController.swift in Sources */,
+				2C05419023D7602D004974B4 /* SearchResultCell.swift in Sources */,
+				2C05418823D754BB004974B4 /* SearchResultViewController.swift in Sources */,
 				2CD9D59123CCADBE0061594E /* AppRootViewController.swift in Sources */,
 				2CD9D58D23CCADBE0061594E /* AppDelegate.swift in Sources */,
+				2C05418223D73BD0004974B4 /* SearchHistoryCell.swift in Sources */,
 				2C60AF4123CCB1CD00A909EA /* AppRootTabBarController.swift in Sources */,
+				2C05418623D74F7D004974B4 /* SearchViewModel.swift in Sources */,
+				2C05417E23D6A001004974B4 /* SearchHistoriesListView.swift in Sources */,
 				2C60AF4323CCB38200A909EA /* DependencyContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1210,7 +1290,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1243,7 +1323,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Domain/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1318,7 +1398,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Infrastructure/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1349,7 +1429,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Infrastructure/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
