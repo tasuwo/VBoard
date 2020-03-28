@@ -9,10 +9,10 @@ import APIKit
  */
 class NOPDataParser: APIKit.DataParser {
     var contentType: String? {
-        return "application/json"
+        "application/json"
     }
 
     func parse(data: Data) throws -> Any {
-        return data
+        data
     }
 }

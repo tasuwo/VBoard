@@ -25,16 +25,16 @@ extension Request where Self: YouTubeV3BaseRequest {
     // MARK: - Request
 
     public var baseURL: URL {
-        return URL(string: "https://www.googleapis.com/youtube/v3")!
+        URL(string: "https://www.googleapis.com/youtube/v3")!
     }
 
     public var baseParameters: [String: Any] {
-        return [
-            "key": "",
+        [
+            "key": ""
         ]
     }
 
     public var dataParser: DataParser {
-        return NOPDataParser()
+        NOPDataParser()
     }
 }

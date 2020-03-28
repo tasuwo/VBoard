@@ -26,11 +26,11 @@ extension YouTube {
 
             public var key: String {
                 switch self {
-                case .forCounterOwner(_):
+                case .forCounterOwner:
                     return "forCounterOwner"
-                case .forMine(_):
+                case .forMine:
                     return "forMine"
-                case .relatedToVideoId(_):
+                case .relatedToVideoId:
                     return "relatedToVideoId"
                 }
             }
@@ -39,8 +39,10 @@ extension YouTube {
                 switch self {
                 case let .forCounterOwner(value):
                     return String(value)
+
                 case let .forMine(value):
                     return String(value)
+
                 case let .relatedToVideoId(value):
                     return value
                 }
@@ -278,15 +280,15 @@ extension YouTube {
         // MARK: - Request
 
         public var method: HTTPMethod {
-            return .get
+            .get
         }
 
         public var path: String {
-            return "/search"
+            "/search"
         }
 
         public var parameters: Any? {
-            return APIHelper.composeQueryParameters([
+            APIHelper.composeQueryParameters([
                 "part": self.parts.map { $0.rawValue }.joined(separator: ","),
                 self.filter?.key: self.filter?.value,
                 "channelId": self.channelId,
@@ -310,12 +312,12 @@ extension YouTube {
                 "videoEmbeddable": self.videoEmbeddable,
                 "videoLicense": self.videoLicense,
                 "videoSyndicated": self.videoSyndicated,
-                "videoType": self.videoType,
+                "videoType": self.videoType
             ]).merging(self.baseParameters) { _, new in new }
         }
 
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-            return try self.defaultDecoder.decode(SearchApiResponse.self, from: object as! Data)
+            try self.defaultDecoder.decode(SearchApiResponse.self, from: object as! Data)
         }
     }
 }

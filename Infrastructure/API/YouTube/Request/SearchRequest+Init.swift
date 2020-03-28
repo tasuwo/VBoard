@@ -40,14 +40,19 @@ extension YouTube.SearchRequest.Order {
         switch order {
         case .date:
             self = .date
+
         case .rating:
             self = .rating
+
         case .relevance:
             self = .relevance
+
         case .title:
             self = .title
+
         case .videoCount:
             self = .videoCount
+
         case .viewCount:
             self = .viewCount
         }
@@ -59,10 +64,13 @@ extension YouTube.SearchRequest.VideoDuration {
         switch length {
         case .any:
             self = .any
+
         case .long:
             self = .long
+
         case .medium:
             self = .medium
+
         case .short:
             self = .short
         }

@@ -26,7 +26,7 @@ public struct SearchQuery {
 
         /// デフォルト設定
         public static var `default`: Self {
-            return .relevance
+            .relevance
         }
     }
 
@@ -43,7 +43,7 @@ public struct SearchQuery {
 
         /// デフォルト設定
         public static var `default`: Self {
-            return .any
+            .any
         }
     }
 
@@ -64,7 +64,7 @@ public struct SearchQuery {
 
         /// デフォルト設定
         public static var `default`: Self {
-            return .any
+            .any
         }
 
         // MARK: - Methods
@@ -80,17 +80,22 @@ public struct SearchQuery {
             switch self {
             case .any:
                 return nil
+
             case .hour:
                 return date.addingTimeInterval(-1 * 60 * 60)
+
             case .today:
                 return Calendar(identifier: .gregorian)
                     .date(from: Calendar(identifier: .gregorian).dateComponents([.year, .month, .day], from: date))
+
             case .thisWeek:
                 return Calendar(identifier: .gregorian)
                     .date(from: Calendar(identifier: .gregorian).dateComponents([.yearForWeekOfYear, .weekOfYear], from: date))
+
             case .thisMonth:
                 return Calendar(identifier: .gregorian)
                     .date(from: Calendar(identifier: .gregorian).dateComponents([.year, .month], from: date))
+
             case .thisYear:
                 return Calendar(identifier: .gregorian)
                     .date(from: Calendar(identifier: .gregorian).dateComponents([.year], from: date))
