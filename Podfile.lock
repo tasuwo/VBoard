@@ -19,6 +19,7 @@ PODS:
     - RxSwift (~> 5)
   - SwiftFormat/CLI (0.43.5)
   - SwiftLint (0.38.2)
+  - VBoardUIKit (0.0.1)
 
 DEPENDENCIES:
   - APIKit (~> 5.1.0)
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - RxTest (~> 5.0.0)
   - SwiftFormat/CLI
   - SwiftLint
+  - VBoardUIKit (from `./`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -48,6 +50,10 @@ SPEC REPOS:
     - SwiftFormat
     - SwiftLint
 
+EXTERNAL SOURCES:
+  VBoardUIKit:
+    :path: "./"
+
 SPEC CHECKSUMS:
   APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -61,7 +67,8 @@ SPEC CHECKSUMS:
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   SwiftFormat: 352ea545e3e13cfd7a449e621c1f3c2e244d4906
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
+  VBoardUIKit: 964d3ec47bc639ef06a2fceb5eca90fb6fad8dc4
 
-PODFILE CHECKSUM: 60f2a872d98572dcbea441d36671e2eab4ce647b
+PODFILE CHECKSUM: 40b6f524988bdae7df40997b7e671d0d35ff404e
 
 COCOAPODS: 1.7.1

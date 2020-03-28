@@ -12,6 +12,8 @@ abstract_target 'All' do
 
     pod 'SwiftFormat/CLI'
     pod 'SwiftLint'
+
+    pod 'VBoardUIKit', :path => './'
   end
 
   target 'VBoardTests' do
