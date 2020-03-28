@@ -17,7 +17,7 @@ extension YouTube.SearchRequest {
         self.pageToken = query.pageToken
         self.publishedAfter = query.uploadDate.publishedAfter(basedOn: Date())
         self.publishedBefore = nil
-        self.query = query.query
+        self.q = query.query
         self.regionCode = nil
         self.safeSearch = nil
         self.topicId = nil
