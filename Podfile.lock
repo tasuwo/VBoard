@@ -18,6 +18,7 @@ PODS:
   - RxTest (5.0.1):
     - RxSwift (~> 5)
   - SwiftFormat/CLI (0.43.5)
+  - SwiftLint (0.38.2)
 
 DEPENDENCIES:
   - APIKit (~> 5.1.0)
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - RxSwift (~> 5.0.0)
   - RxTest (~> 5.0.0)
   - SwiftFormat/CLI
+  - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - RxSwift
     - RxTest
     - SwiftFormat
+    - SwiftLint
 
 SPEC CHECKSUMS:
   APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
@@ -57,7 +60,8 @@ SPEC CHECKSUMS:
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   SwiftFormat: 352ea545e3e13cfd7a449e621c1f3c2e244d4906
+  SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 3e3079cc531803bf9e1bb11af79d2a4942aa90a1
+PODFILE CHECKSUM: 60f2a872d98572dcbea441d36671e2eab4ce647b
 
 COCOAPODS: 1.7.1

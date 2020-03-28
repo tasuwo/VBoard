@@ -9,6 +9,9 @@ abstract_target 'All' do
     pod 'RxSwift',       '~> 5.0.0'
     pod 'RxRelay',       '~> 5.0.0'
     pod 'RxDataSources', '~> 4.0'
+
+    pod 'SwiftFormat/CLI'
+    pod 'SwiftLint'
   end
 
   target 'VBoardTests' do
