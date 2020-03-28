@@ -6,9 +6,6 @@
  * 検索のソートに利用するクエリ
  */
 public struct SearchQuery {
-    /// デフォルトのページサイズ
-    public static let defaultPageSize: UInt = 10
-
     /// ソート順
     public enum SortOrder {
         /// 作成日の新しい順
@@ -102,6 +99,9 @@ public struct SearchQuery {
             }
         }
     }
+
+    /// デフォルトのページサイズ
+    public static let defaultPageSize: UInt = 10
 
     /// クエリ文字列
     public let query: String

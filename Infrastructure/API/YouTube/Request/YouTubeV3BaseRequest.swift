@@ -25,7 +25,7 @@ extension Request where Self: YouTubeV3BaseRequest {
     // MARK: - Request
 
     public var baseURL: URL {
-        URL(string: "https://www.googleapis.com/youtube/v3")!
+        URL(string: "https://www.googleapis.com/youtube/v3")! // swiftlint:disable:this force_unwrapping
     }
 
     public var baseParameters: [String: Any] {

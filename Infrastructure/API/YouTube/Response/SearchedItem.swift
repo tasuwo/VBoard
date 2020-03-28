@@ -7,7 +7,7 @@ extension YouTube {
      * See: https://developers.google.com/youtube/v3/docs/search?hl=ja#resource
      */
     public struct SearchedItem: Decodable {
-        public struct Id: Decodable {
+        public struct ResourceId: Decodable {
             /// リソースのタイプ
             public let kind: String
             /// リソースのタイプが動画の場合にそのIDが入る
@@ -29,9 +29,9 @@ extension YouTube {
                 public let high: Thumbnail
 
                 enum CodingKeys: String, CodingKey {
-                    case `default` = "default"
-                    case medium = "medium"
-                    case high = "high"
+                    case `default`
+                    case medium
+                    case high
                 }
             }
 
@@ -64,7 +64,7 @@ extension YouTube {
         /// このリソースのEtag
         public let etag: String
         /// リソースを一意に特定できる情報
-        public let id: Id?
+        public let id: ResourceId?
         /// 基本情報
         public let snippet: Snippet?
     }

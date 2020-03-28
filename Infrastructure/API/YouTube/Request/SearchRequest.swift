@@ -125,7 +125,7 @@ extension YouTube {
             /// 3D動画に限定する
             case threeD = "3D"
             /// 2D/3D動画に基づいてフィルタリングしない
-            case any = "any"
+            case any
         }
 
         public enum VideoDuration: String {
@@ -143,7 +143,7 @@ extension YouTube {
             /// 埋め込み可能かどうかにかかわらず取得
             case any
             /// 埋め込み動画のみを取得
-            case `true` = "true"
+            case `true`
         }
 
         public enum VideoLicense: String {
@@ -159,7 +159,7 @@ extension YouTube {
             /// シンジケートされているかどうかにかかわらず取得
             case any
             /// シンジケートされている動画のみを取得
-            case `true` = "true"
+            case `true`
         }
 
         public enum VideoType: String {
@@ -193,7 +193,7 @@ extension YouTube {
         /// 指定日時より前に作成されたリソースのみ含む
         public let publishedBefore: Date?
         /// 検索クエリ
-        public let q: String?
+        public let q: String? // swiftlint:disable:this
         /// 国のフィルタ
         public let regionCode: Country?
         /// 制限コンテンツのフィルタ
@@ -288,36 +288,38 @@ extension YouTube {
         }
 
         public var parameters: Any? {
-            APIHelper.composeQueryParameters([
-                "part": self.parts.map { $0.rawValue }.joined(separator: ","),
-                self.filter?.key: self.filter?.value,
-                "channelId": self.channelId,
-                "channelType": self.channelType,
-                "eventType": self.eventType,
-                "maxResults": self.maxResults,
-                "order": self.order,
-                "pageToken": self.pageToken,
-                "publishedAfter": self.publishedAfter,
-                "publishedBefore": self.publishedBefore,
-                "q": self.q,
-                "regionCode": self.regionCode?.alpha2Code,
-                "safeSearch": self.safeSearch,
-                "topicId": self.topicId,
-                "type": self.type,
-                "videoCaption": self.videoCaption,
-                "videoCategoryId": self.videoCategoryId,
-                "videoDefinition": self.videoDefinition,
-                "videoDimention": self.videoDimention,
-                "videoDuration": self.videoDuration,
-                "videoEmbeddable": self.videoEmbeddable,
-                "videoLicense": self.videoLicense,
-                "videoSyndicated": self.videoSyndicated,
-                "videoType": self.videoType
-            ]).merging(self.baseParameters) { _, new in new }
+            APIHelper
+                .composeQueryParameters([
+                    "part": self.parts.map { $0.rawValue }.joined(separator: ","),
+                    self.filter?.key: self.filter?.value,
+                    "channelId": self.channelId,
+                    "channelType": self.channelType,
+                    "eventType": self.eventType,
+                    "maxResults": self.maxResults,
+                    "order": self.order,
+                    "pageToken": self.pageToken,
+                    "publishedAfter": self.publishedAfter,
+                    "publishedBefore": self.publishedBefore,
+                    "q": self.q,
+                    "regionCode": self.regionCode?.alpha2Code,
+                    "safeSearch": self.safeSearch,
+                    "topicId": self.topicId,
+                    "type": self.type,
+                    "videoCaption": self.videoCaption,
+                    "videoCategoryId": self.videoCategoryId,
+                    "videoDefinition": self.videoDefinition,
+                    "videoDimention": self.videoDimention,
+                    "videoDuration": self.videoDuration,
+                    "videoEmbeddable": self.videoEmbeddable,
+                    "videoLicense": self.videoLicense,
+                    "videoSyndicated": self.videoSyndicated,
+                    "videoType": self.videoType
+                ])
+                .merging(self.baseParameters) { _, new in new }
         }
 
         public func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-            try self.defaultDecoder.decode(SearchApiResponse.self, from: object as! Data)
+            try self.defaultDecoder.decode(SearchApiResponse.self, from: object as! Data) // swiftlint:disable:this force_cast
         }
     }
 }

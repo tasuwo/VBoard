@@ -40,7 +40,7 @@ opt_in_rules:
   - fatal_error_message
   # あとで有効にしたい
   # - file_header
-  - file_name
+  # - file_name
   - file_name_no_space
   - file_types_order
   - first_where
@@ -118,13 +118,13 @@ opt_in_rules:
   - yoda_condition
 disabled_rules:
   - cyclomatic_complexity
+  - nesting
 
 identifier_name:
   excluded:
     - id
     - to
-    - l
-    - v
+    - q
 line_length: 300
 file_length:
   warning: 500
