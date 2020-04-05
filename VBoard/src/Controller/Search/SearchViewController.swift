@@ -54,7 +54,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        title = NSLocalizedString("SearchView.title", comment: "")
+        self.title = L10n.SearchView.title
     }
 
     // MARK: - Methods

@@ -34,7 +34,7 @@ class AppRootTabBarController: UITabBarController, AppRootTabBarControllerProtoc
 
         let searchViewController = factory.makeSearchViewController()
 
-        searchViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Tabber.search", comment: ""), image: nil, tag: 0)
+        searchViewController.tabBarItem = UITabBarItem(title: L10n.Tabbar.search, image: nil, tag: 0)
 
         self.viewControllers = [UINavigationController(rootViewController: searchViewController)]
     }
