@@ -10,7 +10,7 @@ extension DependencyContainer: ViewControllerFactory {
     // MARK: - ViewControllerFactory
 
     func makeAppRootTabBarController() -> AppRootTabBarControllerProtocol {
-        return AppRootTabBarController(factory: self)
+        AppRootTabBarController(factory: self)
     }
 
     func makeSearchViewController() -> SearchViewControllerProtocol {

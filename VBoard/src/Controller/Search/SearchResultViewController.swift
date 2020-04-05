@@ -5,6 +5,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import VBoardUIKit
 
 protocol SearchResultViewControllerProtocol: UIViewController {}
 
@@ -15,11 +16,8 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
     private let viewModel: SearchResultViewModel
     private let disposeBag = DisposeBag()
 
-    @IBOutlet var searchResultsView: SearchResultsListView!
+    @IBOutlet var tableView: ContentContainerTableView!
     private var searchController: UISearchController!
-
-    private var thumbnailCache: [IndexPath: UIImage] = [:]
-    private var thumbnailDownloadersInProgress: [IndexPath: ThumbnailDowloaderProtocol] = [:]
 
     // MARK: - Initializer
 
@@ -56,29 +54,19 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
             .disposed(by: self.disposeBag)
 
         self.viewModel.items
-            .bind(to: self.searchResultsView.rx.items(cellIdentifier: SearchResultsListView.identifier)) { [weak self] row, element, cell in
-                guard let self = self else { return }
-                guard let cell = cell as? SearchResultCell else { return }
-                let indexPath = IndexPath(item: row, section: 0)
-
+            .bind(to: self.tableView.rx.items(cellIdentifier: ContentContainerTableView.reuseIdentifier)) { _, element, cell in
+                guard let cell = cell as? ContentContainer else { return }
                 cell.title = element.title
-
-                let downloader = ThumbnailDownloader(size: cell.thumbnailSize)
-                downloader.startDownload(by: element.thumbnail.medium!) { [weak self] result in
-                    guard let self = self else { return }
-
-                    switch result {
-                    case let .success(image):
-                        self.thumbnailCache[indexPath] = image
-                        cell.thumbnail = image
-                        self.thumbnailDownloadersInProgress.removeValue(forKey: indexPath)
-                    case .failure:
-                        break
-                    }
+                if let thumbnail = element.thumbnail.medium {
+                    cell.thumbnailUrl = thumbnail
+                } else {
+                    cell.thumbnailUrl = element.thumbnail.default
                 }
-                self.thumbnailDownloadersInProgress[indexPath] = downloader
+                cell.uploadDate = element.publichedAt
             }
             .disposed(by: self.disposeBag)
+
+        self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
 
         self.viewModel.doSearch()
     }
@@ -90,5 +78,13 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
             let viewController = self.factory.makeSearchResultViewController(query: query)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+}
+
+extension SearchResultViewController: UITableViewDelegate {
+    // MARK: - UITableViewDelegate
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        ContentContainer.preferredHeight
     }
 }

@@ -15,7 +15,6 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     private let viewModel: SearchViewModel
     private let disposeBag = DisposeBag()
 
-    @IBOutlet var searchHistoriesView: SearchHistoriesListView!
     private var searchController: UISearchController!
 
     // MARK: - Initializer

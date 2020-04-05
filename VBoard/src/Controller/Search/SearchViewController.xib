@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="VBoard" customModuleProvider="target">
             <connections>
-                <outlet property="searchHistoriesView" destination="3JY-Tm-OmG" id="ymJ-bR-wYI"/>
                 <outlet property="view" destination="BW5-lY-3e6" id="kas-AU-oRe"/>
             </connections>
         </placeholder>
@@ -17,13 +16,6 @@
         <view contentMode="scaleToFill" id="BW5-lY-3e6">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3JY-Tm-OmG" customClass="SearchHistoriesListView" customModule="VBoard" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </tableView>
-            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <viewLayoutGuide key="safeArea" id="vDg-Jg-ntc"/>
             <point key="canvasLocation" x="117" y="161"/>

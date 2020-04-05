@@ -27,6 +27,7 @@ class SearchResultViewModel {
                 switch state {
                 case let .content(items: items, pageInfo: _):
                     return items
+
                 default:
                     return nil
                 }
