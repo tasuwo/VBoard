@@ -29,7 +29,7 @@ public struct ListingVideo {
     /// チャンネルタイトル
     public let channelTitle: String
     /// 投稿日時
-    public let publichedAt: Date
+    public let publishedAt: Date
     /// サムネイル
     public let thumbnail: Thumbnail
 
@@ -39,7 +39,7 @@ public struct ListingVideo {
         self.videoId = videoId
         self.title = title
         self.channelTitle = channelTitle
-        self.publichedAt = publishedAt
+        self.publishedAt = publishedAt
         self.thumbnail = thumbnail
     }
 }

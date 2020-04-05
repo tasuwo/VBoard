@@ -66,9 +66,9 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
                 } else {
                     cell.thumbnailUrl = element.thumbnail.default
                 }
-                cell.uploadDate = element.publichedAt
+                cell.uploadDate = element.publishedAt
             }
-        .disposed(by: self.disposeBag)
+            .disposed(by: self.disposeBag)
 
         self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
 
