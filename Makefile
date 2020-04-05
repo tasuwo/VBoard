@@ -1,6 +1,6 @@
 SWIFT_FORMAT           := ./Pods/SwiftFormat/CommandLineTool/swiftformat
 SWIFT_FORMAT_CONFIG    := .swiftformat
-FORMAT_TARGETS         := VBoard VBoardTests Infrastructure InfrastructureTests Domain DomainTests
+FORMAT_TARGETS         := VBoard VBoardTests Infrastructure InfrastructureTests Domain DomainTests VBoardUIKit VBoardUIKitTests
 FORMAT_EXCLUDE_TARGETS := Pods
 
 SWIFT_LINT             := ./Pods/SwiftLint/swiftlint
