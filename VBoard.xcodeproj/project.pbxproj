@@ -55,6 +55,7 @@
 		2C60AF9723CF823400A909EA /* SearchedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF9623CF823400A909EA /* SearchedItem.swift */; };
 		2C60AF9A23CF826600A909EA /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF9923CF826600A909EA /* Country.swift */; };
 		2C78B8812438E236002F262C /* UploadDateFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C78B8802438E236002F262C /* UploadDateFormatterSpec.swift */; };
+		2C78B8842439ACE5002F262C /* SearchServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C78B8832439ACE5002F262C /* SearchServiceSpec.swift */; };
 		2C78B88E2439B10F002F262C /* TestHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C78B88C2439B10F002F262C /* TestHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2C78B8912439B10F002F262C /* TestHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C78B88A2439B10F002F262C /* TestHelper.framework */; };
 		2C78B8922439B10F002F262C /* TestHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C78B88A2439B10F002F262C /* TestHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -264,6 +265,7 @@
 		2C60AF9623CF823400A909EA /* SearchedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItem.swift; sourceTree = "<group>"; };
 		2C60AF9923CF826600A909EA /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		2C78B8802438E236002F262C /* UploadDateFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadDateFormatterSpec.swift; sourceTree = "<group>"; };
+		2C78B8832439ACE5002F262C /* SearchServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchServiceSpec.swift; sourceTree = "<group>"; };
 		2C78B88A2439B10F002F262C /* TestHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C78B88C2439B10F002F262C /* TestHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHelper.h; sourceTree = "<group>"; };
 		2C78B88D2439B10F002F262C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		2C60AF6D23CCD66C00A909EA /* InfrastructureTests */ = {
 			isa = PBXGroup;
 			children = (
+				2C78B8822439ACD3002F262C /* Service */,
 				2C60AF7023CCD66C00A909EA /* Info.plist */,
 				2C60AF6E23CCD66C00A909EA /* InfrastructureTests.swift */,
 			);
@@ -636,6 +639,14 @@
 				2C60AF9923CF826600A909EA /* Country.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2C78B8822439ACD3002F262C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2C78B8832439ACE5002F262C /* SearchServiceSpec.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		2C78B88B2439B10F002F262C /* TestHelper */ = {
@@ -1617,6 +1628,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C78B8842439ACE5002F262C /* SearchServiceSpec.swift in Sources */,
 				2C60AF6F23CCD66C00A909EA /* InfrastructureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
