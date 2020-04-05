@@ -13,9 +13,8 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
 
     private let factory: Factory
     private let viewModel: SearchViewModel
+    private let searchController = UISearchController(searchResultsController: nil)
     private let disposeBag = DisposeBag()
-
-    private var searchController: UISearchController!
 
     // MARK: - Initializer
 
@@ -25,6 +24,7 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
         super.init(nibName: nil, bundle: nil)
     }
 
+    // swiftlint:disable:next unavailable_function
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -34,7 +34,6 @@ class SearchViewController: UIViewController, SearchViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = self.searchController
 

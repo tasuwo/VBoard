@@ -34,14 +34,14 @@ public class SearchService: SearchServiceProtocol {
                     return .never()
                 }
             }
-            .map { response -> SearchServiceQuery in
-                let items = response.items.map { $0.convertToDomainModel() }
-                let pageInfo = PageInfo(totalResults: response.pageInfo.totalResults,
-                                        resultsPerPage: response.pageInfo.resultsPerPage,
-                                        prevPageToken: response.prevPageToken,
-                                        nextPageToken: response.nextPageToken)
-                return .content(items: items, pageInfo: pageInfo)
-            }
+        .map { response -> SearchServiceQuery in
+            let items = response.items.map { $0.convertToDomainModel() }
+            let pageInfo = PageInfo(totalResults: response.pageInfo.totalResults,
+                                    resultsPerPage: response.pageInfo.resultsPerPage,
+                                    prevPageToken: response.prevPageToken,
+                                    nextPageToken: response.nextPageToken)
+            return .content(items: items, pageInfo: pageInfo)
+        }
 
         Observable
             .merge(searchState, searchResult)

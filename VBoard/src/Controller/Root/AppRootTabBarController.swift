@@ -18,6 +18,7 @@ class AppRootTabBarController: UITabBarController, AppRootTabBarControllerProtoc
         super.init(nibName: nil, bundle: nil)
     }
 
+    // swiftlint:disable:next unavailable_function
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -25,6 +26,8 @@ class AppRootTabBarController: UITabBarController, AppRootTabBarControllerProtoc
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
         let searchViewController = factory.makeSearchViewController()
 
         searchViewController.tabBarItem = UITabBarItem(title: NSLocalizedString("Tabber.search", comment: ""), image: nil, tag: 0)

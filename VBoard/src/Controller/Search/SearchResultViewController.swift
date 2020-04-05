@@ -12,12 +12,16 @@ protocol SearchResultViewControllerProtocol: UIViewController {}
 class SearchResultViewController: UIViewController, SearchResultViewControllerProtocol {
     typealias Factory = ViewControllerFactory
 
+    // MARK: - Properties
+
     private let factory: Factory
     private let viewModel: SearchResultViewModel
     private let disposeBag = DisposeBag()
+    private let searchController = UISearchController(searchResultsController: nil)
+
+    // MARK: - IBOutlets
 
     @IBOutlet var tableView: ContentContainerTableView!
-    private var searchController: UISearchController!
 
     // MARK: - Initializer
 
@@ -27,6 +31,7 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
         super.init(nibName: nil, bundle: nil)
     }
 
+    // swiftlint:disable:next unavailable_function
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,7 +41,6 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.navigationItem.searchController = self.searchController
 
@@ -64,7 +68,7 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
                 }
                 cell.uploadDate = element.publichedAt
             }
-            .disposed(by: self.disposeBag)
+        .disposed(by: self.disposeBag)
 
         self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
 

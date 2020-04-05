@@ -21,6 +21,7 @@ class AppRootViewController: UIViewController, AppRootViewControllerProtocol {
         super.init(nibName: nil, bundle: nil)
     }
 
+    // swiftlint:disable:next unavailable_function
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
