@@ -9,7 +9,11 @@ import UIKit
 protocol SearchViewControllerProtocol: UIViewController {}
 
 class SearchViewController: UIViewController, SearchViewControllerProtocol {
+    // MARK: - Type Aliases
+
     typealias Factory = ViewControllerFactory
+
+    // MARK: - Properties
 
     private let factory: Factory
     private let viewModel: SearchViewModel

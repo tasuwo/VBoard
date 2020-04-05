@@ -7,7 +7,11 @@ import UIKit
 protocol AppRootTabBarControllerProtocol: UITabBarController {}
 
 class AppRootTabBarController: UITabBarController, AppRootTabBarControllerProtocol {
+    // MARK: - Type Aliases
+
     typealias Factory = ViewControllerFactory
+
+    // MARK: - Properties
 
     private let factory: Factory
 

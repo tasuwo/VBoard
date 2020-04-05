@@ -15,7 +15,7 @@ class SearchResultViewModel {
 
     private let disposeBag = DisposeBag()
 
-    // MARK: - Lifecycle
+    // MARK: - Initializer
 
     init(service: SearchServiceProtocol, query: String) {
         self.service = service

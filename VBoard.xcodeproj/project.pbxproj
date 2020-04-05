@@ -796,8 +796,8 @@
 		2CD9D5B623CCB0450061594E /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */,
 				2CD9D59023CCADBE0061594E /* AppRootViewController.swift */,
+				2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";

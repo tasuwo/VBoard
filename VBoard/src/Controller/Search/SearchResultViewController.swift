@@ -10,6 +10,8 @@ import VBoardUIKit
 protocol SearchResultViewControllerProtocol: UIViewController {}
 
 class SearchResultViewController: UIViewController, SearchResultViewControllerProtocol {
+    // MARK: - Type Aliases
+
     typealias Factory = ViewControllerFactory
 
     // MARK: - Properties
