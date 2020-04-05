@@ -9,12 +9,12 @@ import Quick
 
 class SearchViewControllerSpec: QuickSpec {
     override func spec() {
-        var factory: FactoryMock!
+        var factory: ViewControllerFactoryMock!
         var viewController: SearchViewController!
 
         beforeEach {
-            factory = FactoryMock()
-            viewController = SearchViewController(factory: factory)
+            factory = ViewControllerFactoryMock()
+            viewController = SearchViewController(factory: factory, viewModel: SearchViewModel())
             _ = viewController.view
         }
 

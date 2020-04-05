@@ -1,0 +1,10 @@
+sources:
+    - ./Domain
+    - ./Infrastructure
+    - ./VBoardUIKit
+templates:
+    - ./templates
+output:
+    ./TestHelper/Mocks/Structs/
+args:
+    testable_import: Domain,Infrastructure,VBoardUIKit

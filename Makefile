@@ -5,6 +5,12 @@ FORMAT_EXCLUDE_TARGETS := Pods
 
 SWIFT_LINT             := ./Pods/SwiftLint/swiftlint
 
+TEST_HELPER_TARGET     := TestHelper
+MOCKOLO                := ./bin/mockolo
+SOURCERY               := ./Pods/Sourcery/bin/sourcery
+SOURCERY_CONFIG        := ./.sourcery.yml
+
+
 fix: swiftlint_fix ## コードの自動修正を行う
 
 swiftlint_fix:
@@ -19,6 +25,16 @@ format: swiftformat_format ## 各種フォーマッターをかける
 
 swiftformat_format: ## swiftformatによるフォーマッターをかける
 	$(SWIFT_FORMAT) --config $(SWIFT_FORMAT_CONFIG) --swiftversion 5 --exclude $(FORMAT_EXCLUDE_TARGETS) $(FORMAT_TARGETS)
+
+generate: generate_mocks ## 各種コード自動生成を行う
+	@$(MOCKOLO) -s Infrastructure -d $(TEST_HELPER_TARGET)/Mocks/Protocol/InfrastructureProtocolMocks.swift -i Infrastructure
+	@$(MOCKOLO) -s Domain -d $(TEST_HELPER_TARGET)/Mocks/Protocol/DomainProtocolMocks.swift -i Domain
+	@$(MOCKOLO) -s VBoardUIKit -d $(TEST_HELPER_TARGET)/Mocks/Protocol/VBoardUIKitProtocolMocks.swift -i VBoardUIKit
+	@$(MOCKOLO) -s VBoard -d VBoardTests/Mocks/Protocol/VBoardProtocolMocks.swift -i VBoard
+	@$(SOURCERY) --config $(SOURCERY_CONFIG)
+
+generate_mocks: ## モックを自動生成する
+	@mockolo -s ./Domain -d $(TEST_HELPER_TARGET)/Mocks/Domain/DomainMocks.swift -i Domain
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

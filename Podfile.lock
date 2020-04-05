@@ -20,6 +20,7 @@ PODS:
   - RxSwift (5.0.1)
   - RxTest (5.0.1):
     - RxSwift (~> 5)
+  - Sourcery (0.17.0)
   - SwiftFormat/CLI (0.43.5)
   - SwiftLint (0.38.2)
   - VBoardUIKit (0.0.1):
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - RxRelay (~> 5.0.0)
   - RxSwift (~> 5.0.0)
   - RxTest (~> 5.0.0)
+  - Sourcery
   - SwiftFormat/CLI
   - SwiftLint
   - VBoardUIKit (from `./`)
@@ -55,6 +57,7 @@ SPEC REPOS:
     - SwiftLint
   trunk:
     - Kingfisher
+    - Sourcery
 
 EXTERNAL SOURCES:
   VBoardUIKit:
@@ -72,10 +75,11 @@ SPEC CHECKSUMS:
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
+  Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SwiftFormat: 352ea545e3e13cfd7a449e621c1f3c2e244d4906
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
   VBoardUIKit: d6b122e18f2525245b8fafb2582b97251f162043
 
-PODFILE CHECKSUM: ee2d3fa91ddf46872c281208276732d69d5e5101
+PODFILE CHECKSUM: c75b3cd071c4a9533d986a030e1e0680e9c83a0b
 
 COCOAPODS: 1.9.1

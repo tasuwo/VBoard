@@ -25,6 +25,7 @@ target 'VBoard' do
 
   pod 'SwiftFormat/CLI'
   pod 'SwiftLint'
+  pod 'Sourcery'
 
   pod 'VBoardUIKit', :path => './'
 
@@ -64,5 +65,15 @@ end
 target 'VBoardUIKitTests' do
   pod 'VBoardUIKit', :path => './'
   test_shared_pods
+end
+
+target 'TestHelper' do
+  pod 'VBoardUIKit', :path => './'
+
+  pod 'APIKit',        '~> 5.1.0'
+  pod 'RxCocoa',       '~> 5.0.0'
+  pod 'RxSwift',       '~> 5.0.0'
+  pod 'RxRelay',       '~> 5.0.0'
+  pod 'RxDataSources', '~> 4.0'
 end
 
