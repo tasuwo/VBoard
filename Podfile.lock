@@ -1,6 +1,9 @@
 PODS:
   - APIKit (5.1.0)
   - Differentiator (4.0.1)
+  - Kingfisher (5.13.3):
+    - Kingfisher/Core (= 5.13.3)
+  - Kingfisher/Core (5.13.3)
   - Nimble (8.0.5)
   - Quick (2.2.0)
   - RxBlocking (5.0.1):
@@ -19,7 +22,8 @@ PODS:
     - RxSwift (~> 5)
   - SwiftFormat/CLI (0.43.5)
   - SwiftLint (0.38.2)
-  - VBoardUIKit (0.0.1)
+  - VBoardUIKit (0.0.1):
+    - Kingfisher (= 5.13.3)
 
 DEPENDENCIES:
   - APIKit (~> 5.1.0)
@@ -36,7 +40,7 @@ DEPENDENCIES:
   - VBoardUIKit (from `./`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - APIKit
     - Differentiator
     - Nimble
@@ -49,6 +53,8 @@ SPEC REPOS:
     - RxTest
     - SwiftFormat
     - SwiftLint
+  trunk:
+    - Kingfisher
 
 EXTERNAL SOURCES:
   VBoardUIKit:
@@ -57,6 +63,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   APIKit: 9e1a4069608bf0ae5238811e6cfc26928ad4d01e
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  Kingfisher: d2b3d6a7200c93b34de9afcdf25c8dd9282ec277
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
   RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
@@ -67,8 +74,8 @@ SPEC CHECKSUMS:
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   SwiftFormat: 352ea545e3e13cfd7a449e621c1f3c2e244d4906
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
-  VBoardUIKit: 964d3ec47bc639ef06a2fceb5eca90fb6fad8dc4
+  VBoardUIKit: d6b122e18f2525245b8fafb2582b97251f162043
 
-PODFILE CHECKSUM: 40b6f524988bdae7df40997b7e671d0d35ff404e
+PODFILE CHECKSUM: ee2d3fa91ddf46872c281208276732d69d5e5101
 
-COCOAPODS: 1.7.1
+COCOAPODS: 1.9.1
