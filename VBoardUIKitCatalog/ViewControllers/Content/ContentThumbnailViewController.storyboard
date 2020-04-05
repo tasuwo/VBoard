@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lmg-aR-HON">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Content Thumbnail View Controller-->
+        <scene sceneID="KMv-6M-qbH">
+            <objects>
+                <tableViewController id="Lmg-aR-HON" customClass="ContentThumbnailViewController" customModule="VBoardUIKitCatalog" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fp0-13-mMO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="16:9" id="51y-0I-gfY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="148" id="Wjm-av-EtT">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wjm-av-EtT" id="Ior-3t-zLp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBL-o2-uNd" customClass="ContentThumbnail" customModule="VBoardUIKit">
+                                                    <rect key="frame" x="93" y="10" width="228" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="OH8-I6-Poj"/>
+                                                        <constraint firstAttribute="width" secondItem="oBL-o2-uNd" secondAttribute="height" multiplier="16:9" id="iBC-lH-yfT"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="oBL-o2-uNd" firstAttribute="centerY" secondItem="Ior-3t-zLp" secondAttribute="centerY" id="4bm-hz-DL2"/>
+                                                <constraint firstItem="oBL-o2-uNd" firstAttribute="centerX" secondItem="Ior-3t-zLp" secondAttribute="centerX" id="pZW-jz-al7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="4:3" id="I5n-aL-avH">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="148" id="Z7o-jm-rgn">
+                                        <rect key="frame" x="0.0" y="232" width="414" height="148"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z7o-jm-rgn" id="qpA-RB-kdx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="icF-9t-xK0" customClass="ContentThumbnail" customModule="VBoardUIKit">
+                                                    <rect key="frame" x="93" y="10" width="228" height="128"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="128" id="bKO-bD-lXz"/>
+                                                        <constraint firstAttribute="width" secondItem="icF-9t-xK0" secondAttribute="height" multiplier="16:9" id="dnL-TV-WYq"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="icF-9t-xK0" firstAttribute="centerY" secondItem="qpA-RB-kdx" secondAttribute="centerY" id="bpc-VZ-LOi"/>
+                                                <constraint firstItem="icF-9t-xK0" firstAttribute="centerX" secondItem="qpA-RB-kdx" secondAttribute="centerX" id="dFj-NJ-vL5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Lmg-aR-HON" id="xY0-Xd-iYH"/>
+                            <outlet property="delegate" destination="Lmg-aR-HON" id="ScP-4C-o6d"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="largeThumbnail" destination="oBL-o2-uNd" id="j9F-wv-thA"/>
+                        <outlet property="smallThumbnail" destination="icF-9t-xK0" id="9iJ-m6-Eku"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyf-LZ-zmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="-241"/>
+        </scene>
+    </scenes>
+</document>
