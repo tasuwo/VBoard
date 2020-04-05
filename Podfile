@@ -26,6 +26,7 @@ target 'VBoard' do
   pod 'SwiftFormat/CLI'
   pod 'SwiftLint'
   pod 'Sourcery'
+  pod 'SwiftGen', '~> 6.1'
 
   pod 'VBoardUIKit', :path => './'
 

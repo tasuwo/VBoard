@@ -22,6 +22,7 @@ PODS:
     - RxSwift (~> 5)
   - Sourcery (0.17.0)
   - SwiftFormat/CLI (0.43.5)
+  - SwiftGen (6.1.0)
   - SwiftLint (0.38.2)
   - VBoardUIKit (0.0.1):
     - Kingfisher (= 5.13.3)
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - RxTest (~> 5.0.0)
   - Sourcery
   - SwiftFormat/CLI
+  - SwiftGen (~> 6.1)
   - SwiftLint
   - VBoardUIKit (from `./`)
 
@@ -58,6 +60,7 @@ SPEC REPOS:
   trunk:
     - Kingfisher
     - Sourcery
+    - SwiftGen
 
 EXTERNAL SOURCES:
   VBoardUIKit:
@@ -77,9 +80,10 @@ SPEC CHECKSUMS:
   RxTest: 0132f952a61da82d5233abedaa559df91e5330e5
   Sourcery: 3ed61be7c8a1218fce349266139379dba477efe0
   SwiftFormat: 352ea545e3e13cfd7a449e621c1f3c2e244d4906
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
   VBoardUIKit: d6b122e18f2525245b8fafb2582b97251f162043
 
-PODFILE CHECKSUM: c75b3cd071c4a9533d986a030e1e0680e9c83a0b
+PODFILE CHECKSUM: ebf9e43c02af93ce34cb3262582bc32461bd13f8
 
 COCOAPODS: 1.9.1
