@@ -32,8 +32,8 @@ class SearchResultViewModel {
                     return nil
                 }
             }
-        .bind(to: self.items)
-        .disposed(by: self.disposeBag)
+            .bind(to: self.items)
+            .disposed(by: self.disposeBag)
     }
 
     // MARK: - Methods
