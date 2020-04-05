@@ -28,3 +28,4 @@ Pods/*
 ## maxOS
 .DS_Store
 
+!lib_InternalSwiftSyntaxParser.dylib
