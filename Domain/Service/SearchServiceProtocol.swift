@@ -23,6 +23,7 @@ public enum SearchServiceCommand {
     case search(query: SearchQuery)
 }
 
+/// @mockable
 public protocol SearchServiceProtocol {
     var state: BehaviorRelay<SearchServiceQuery> { get }
     var command: PublishRelay<SearchServiceCommand> { get set }

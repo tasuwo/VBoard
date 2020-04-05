@@ -2,10 +2,12 @@
 //  Copyright © 2020 Tasuku Tozawa. All rights reserved.
 //
 
+// sourcery: AutoDefaultValue
 /**
  * 一覧表示可能な動画情報
  */
 public struct ListingVideo {
+    // sourcery: AutoDefaultValue
     /// サムネイル情報
     public struct Thumbnail {
         /// デフォルトのサムネイル画像のURL

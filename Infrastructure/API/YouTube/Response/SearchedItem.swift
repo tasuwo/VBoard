@@ -3,10 +3,12 @@
 //
 
 extension YouTube {
+    // sourcery: AutoDefaultValue
     /**
      * See: https://developers.google.com/youtube/v3/docs/search?hl=ja#resource
      */
     public struct SearchedItem: Decodable {
+        // sourcery: AutoDefaultValue
         public struct ResourceId: Decodable {
             /// リソースのタイプ
             public let kind: String
@@ -18,7 +20,9 @@ extension YouTube {
             public let playlistId: String?
         }
 
+        // sourcery: AutoDefaultValue
         public struct Snippet: Decodable {
+            // sourcery: AutoDefaultValue
             /// サムネイル画像のマップ
             public struct Thumbnails: Decodable {
                 /// デフォルトのサムネイル画像
@@ -35,6 +39,7 @@ extension YouTube {
                 }
             }
 
+            // sourcery: AutoDefaultValue
             /// サムネイル画像
             public struct Thumbnail: Decodable {
                 /// 画像のURL

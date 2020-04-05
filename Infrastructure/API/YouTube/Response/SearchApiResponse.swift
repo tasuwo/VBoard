@@ -3,12 +3,14 @@
 //
 
 extension YouTube {
+    // sourcery: AutoDefaultValue
     /**
      * 検索APIのレスポンスモデル
      *
      * See: https://developers.google.com/youtube/v3/docs/search/list?hl=ja
      */
     public struct SearchApiResponse: Decodable {
+        // sourcery: AutoDefaultValue
         /// 結果セットのページング情報
         public struct PageInfo: Decodable {
             /// 結果の総数

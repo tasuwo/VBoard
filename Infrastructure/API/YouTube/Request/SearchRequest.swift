@@ -6,6 +6,7 @@ import APIKit
 import Foundation
 
 extension YouTube {
+    // sourcery: AutoDefaultValue
     /**
      * Search:list
      *
