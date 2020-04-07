@@ -32,7 +32,7 @@ class AppRootTabBarController: UITabBarController, AppRootTabBarControllerProtoc
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let searchViewController = factory.makeSearchViewController()
+        let searchViewController = factory.makeSearchEntryViewController(with: nil)
 
         searchViewController.tabBarItem = UITabBarItem(title: L10n.Tabbar.search, image: nil, tag: 0)
 

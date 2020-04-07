@@ -18,6 +18,7 @@ protocol SearchEntryViewModelInputs {
 }
 
 protocol SearchEntryViewModelOutputs {
+    var entryUpdated: Driver<String?> { get }
     var searchResultViewShown: Signal<String> { get }
 }
 
@@ -34,6 +35,7 @@ class SearchEntryViewModel: SearchEntryViewModelType, SearchEntryViewModelInputs
 
     // MARK: - SearchEntryViewModelOutputs
 
+    var entryUpdated: Driver<String?>
     var searchResultViewShown: Signal<String>
 
     // MARK: - Privates
@@ -44,13 +46,15 @@ class SearchEntryViewModel: SearchEntryViewModelType, SearchEntryViewModelInputs
 
     // MARK: - Initializer
 
-    init() {
+    init(initialEntry entry: String? = nil) {
         // MARK: Inputs
 
-        self.entry = .init(value: nil)
+        self.entry = .init(value: entry)
         self.searchButtonClicked = .init()
 
         // MARK: Outputs
+
+        self.entryUpdated = self.entry.asDriver()
 
         self.searchResultViewShown = self._searchResultViewShown
             .asSignal(onErrorSignalWith: .empty())

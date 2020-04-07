@@ -76,8 +76,23 @@ extension SearchEntryViewController {
     // MARK: - Binding
 
     func bind(to dependency: Dependency) {
+        // MARK: Outputs
+
+        dependency.outputs.entryUpdated
+            .drive(self.titleView.searchBar.rx.text)
+            .disposed(by: self.disposeBag)
+
+        dependency.outputs.searchResultViewShown
+            .emit(onNext: { [weak self] query in
+                guard let self = self else { return }
+                let viewController = self.factory.makeSearchResultViewController(query: query)
+                self.navigationController?.pushViewController(viewController, animated: true)
+            })
+            .disposed(by: self.disposeBag)
+
         // MARK: Inputs
 
+        // NOTE: For setting initial entry to searchBar, inputs MUST be binded after outputs.
         self.titleView.searchBar.rx
             .text
             .bind(to: dependency.inputs.entry)
@@ -86,16 +101,6 @@ extension SearchEntryViewController {
         self.titleView.searchBar.rx
             .searchButtonClicked
             .bind(to: dependency.inputs.searchButtonClicked)
-            .disposed(by: self.disposeBag)
-
-        // MARK: Outputs
-
-        dependency.outputs.searchResultViewShown
-            .emit(onNext: { [weak self] query in
-                guard let self = self else { return }
-                let viewController = self.factory.makeSearchResultViewController(query: query)
-                self.navigationController?.pushViewController(viewController, animated: true)
-            })
             .disposed(by: self.disposeBag)
     }
 }

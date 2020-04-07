@@ -105,6 +105,7 @@ extension SearchResultViewController: SearchResultTitleViewDelegate {
     // MARK: - SearchResultTitleViewDelegate
 
     func didTapTitle() {
-        print(#function)
+        let viewController = self.factory.makeSearchEntryViewController(with: self.viewModel.outputs.searchedQuery)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
