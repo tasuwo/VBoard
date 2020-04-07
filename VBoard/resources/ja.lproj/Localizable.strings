@@ -9,3 +9,4 @@
 "Tabbar.search" = "検索";
 
 "SearchView.title" = "検索";
+"SearchView.placeholder" = "キーワード検索";

@@ -13,9 +13,9 @@ extension DependencyContainer: ViewControllerFactory {
         AppRootTabBarController(factory: self)
     }
 
-    func makeSearchViewController() -> SearchViewControllerProtocol {
-        let viewModel = SearchViewModel()
-        return SearchViewController(factory: self, viewModel: viewModel)
+    func makeSearchViewController() -> SearchEntryViewControllerProtocol {
+        let viewModel = SearchEntryViewModel()
+        return SearchEntryViewController(factory: self, viewModel: viewModel)
     }
 
     func makeSearchResultViewController(query: String) -> SearchResultViewControllerProtocol {

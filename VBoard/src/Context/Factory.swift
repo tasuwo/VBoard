@@ -5,6 +5,6 @@
 /// @mockable
 protocol ViewControllerFactory {
     func makeAppRootTabBarController() -> AppRootTabBarControllerProtocol
-    func makeSearchViewController() -> SearchViewControllerProtocol
+    func makeSearchViewController() -> SearchEntryViewControllerProtocol
     func makeSearchResultViewController(query: String) -> SearchResultViewControllerProtocol
 }

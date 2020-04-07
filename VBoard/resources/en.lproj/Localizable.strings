@@ -9,3 +9,4 @@
 "Tabbar.search" = "search";
 
 "SearchView.title" = "search";
+"SearchView.placeholder" = "Keyword Search";

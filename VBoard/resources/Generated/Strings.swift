@@ -12,6 +12,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
     internal enum SearchView {
+        /// キーワード検索
+        internal static let placeholder = L10n.tr("Localizable", "SearchView.placeholder")
         /// 検索
         internal static let title = L10n.tr("Localizable", "SearchView.title")
     }

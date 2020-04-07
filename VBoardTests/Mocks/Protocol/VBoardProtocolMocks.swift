@@ -18,8 +18,8 @@ class ViewControllerFactoryMock: ViewControllerFactory {
     }
 
     var makeSearchViewControllerCallCount = 0
-    var makeSearchViewControllerHandler: (() -> (SearchViewControllerProtocol))?
-    func makeSearchViewController() -> SearchViewControllerProtocol {
+    var makeSearchViewControllerHandler: (() -> (SearchEntryViewControllerProtocol))?
+    func makeSearchViewController() -> SearchEntryViewControllerProtocol {
         makeSearchViewControllerCallCount += 1
         if let makeSearchViewControllerHandler = makeSearchViewControllerHandler {
             return makeSearchViewControllerHandler()
