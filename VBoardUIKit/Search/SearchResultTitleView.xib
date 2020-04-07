@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultTitleView" customModule="VBoardUIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="baseView" destination="I7P-va-0GQ" id="ocP-yZ-VeP"/>
+                <outlet property="titleLabel" destination="eeF-N7-Fw7" id="hGt-Up-nd1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="I7P-va-0GQ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeF-N7-Fw7">
+                    <rect key="frame" x="10" y="15" width="394" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eeF-N7-Fw7" secondAttribute="trailing" priority="999" constant="10" id="9rb-tI-1kc"/>
+                <constraint firstItem="eeF-N7-Fw7" firstAttribute="centerY" secondItem="I7P-va-0GQ" secondAttribute="centerY" id="AWo-19-Wmk"/>
+                <constraint firstItem="eeF-N7-Fw7" firstAttribute="leading" secondItem="I7P-va-0GQ" secondAttribute="leading" constant="10" id="opR-5i-PbK"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="itb-j7-SNL" appends="YES" id="paW-5z-tsk"/>
+            </connections>
+            <point key="canvasLocation" x="-223.18840579710147" y="-205.24553571428569"/>
+        </view>
+        <tapGestureRecognizer id="itb-j7-SNL">
+            <connections>
+                <action selector="didTapTitle:" destination="-1" id="NFG-Te-rct"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>
