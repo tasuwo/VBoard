@@ -34,6 +34,8 @@
 		2C305AFA24364DA20040130A /* DurationFormatterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C305AF924364DA20040130A /* DurationFormatterSpec.swift */; };
 		2C4BF940243CCF60000AFE6C /* SearchResultTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BF93F243CCF60000AFE6C /* SearchResultTitleViewController.swift */; };
 		2C4BF942243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4BF941243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard */; };
+		2C4BF948243CE0C5000AFE6C /* SearchEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BF947243CE0C5000AFE6C /* SearchEntryViewController.swift */; };
+		2C4BF94A243CE0D1000AFE6C /* SearchEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4BF949243CE0D1000AFE6C /* SearchEntryViewController.storyboard */; };
 		2C53237324387BBF0055811B /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53237224387BBF0055811B /* ContentContainerViewController.swift */; };
 		2C53237524387BE10055811B /* ContentContainerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C53237424387BE10055811B /* ContentContainerViewController.storyboard */; };
 		2C60AF4123CCB1CD00A909EA /* AppRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */; };
@@ -246,6 +248,8 @@
 		2C305AF924364DA20040130A /* DurationFormatterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationFormatterSpec.swift; sourceTree = "<group>"; };
 		2C4BF93F243CCF60000AFE6C /* SearchResultTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTitleViewController.swift; sourceTree = "<group>"; };
 		2C4BF941243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultTitleViewController.storyboard; sourceTree = "<group>"; };
+		2C4BF947243CE0C5000AFE6C /* SearchEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntryViewController.swift; sourceTree = "<group>"; };
+		2C4BF949243CE0D1000AFE6C /* SearchEntryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchEntryViewController.storyboard; sourceTree = "<group>"; };
 		2C53237224387BBF0055811B /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		2C53237424387BE10055811B /* ContentContainerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentContainerViewController.storyboard; sourceTree = "<group>"; };
 		2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootTabBarController.swift; sourceTree = "<group>"; };
@@ -527,6 +531,8 @@
 			children = (
 				2C4BF93F243CCF60000AFE6C /* SearchResultTitleViewController.swift */,
 				2C4BF941243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard */,
+				2C4BF947243CE0C5000AFE6C /* SearchEntryViewController.swift */,
+				2C4BF949243CE0D1000AFE6C /* SearchEntryViewController.storyboard */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1254,6 +1260,7 @@
 				2CA9140B242F5E2B0051C04C /* LaunchScreen.storyboard in Resources */,
 				2CE23A5F2438724700B5E529 /* thumbnail_4_3.png in Resources */,
 				2CA91408242F5E2B0051C04C /* Assets.xcassets in Resources */,
+				2C4BF94A243CE0D1000AFE6C /* SearchEntryViewController.storyboard in Resources */,
 				2CE23A5E24386F1400B5E529 /* thumbnail_16_9.png in Resources */,
 				2C4BF942243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard in Resources */,
 				2CA91406242F5E290051C04C /* Main.storyboard in Resources */,
@@ -1680,6 +1687,7 @@
 				2C53237324387BBF0055811B /* ContentContainerViewController.swift in Sources */,
 				2CA91403242F5E290051C04C /* ContentThumbnailViewController.swift in Sources */,
 				2CA913FF242F5E290051C04C /* AppDelegate.swift in Sources */,
+				2C4BF948243CE0C5000AFE6C /* SearchEntryViewController.swift in Sources */,
 				2CA91401242F5E290051C04C /* SceneDelegate.swift in Sources */,
 				2C4BF940243CCF60000AFE6C /* SearchResultTitleViewController.swift in Sources */,
 			);

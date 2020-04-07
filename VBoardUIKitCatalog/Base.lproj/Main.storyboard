@@ -81,6 +81,26 @@
                                             <segue destination="Y7B-EG-m7c" kind="show" id="FZh-yC-DCu"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Rpc-3r-sQp" style="IBUITableViewCellStyleDefault" id="xxQ-mW-ruw">
+                                        <rect key="frame" x="0.0" y="214.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxQ-mW-ruw" id="fQN-8p-X3q">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Search Entry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rpc-3r-sQp">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lXJ-tw-oHl" kind="show" id="Dwi-VT-LS6"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -124,6 +144,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKb-Ab-J7F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1411" y="238"/>
+        </scene>
+        <!--SearchEntryViewController-->
+        <scene sceneID="23G-Wu-Ct8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchEntryViewController" id="lXJ-tw-oHl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="WCJ-dr-5eY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eg6-sP-ZQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389" y="265"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2L9-nh-UWi">
