@@ -13,13 +13,13 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
     // MARK: - Type Aliases
 
     typealias Factory = ViewControllerFactory
+    typealias Dependency = SearchResultViewModelType
 
     // MARK: - Properties
 
     private let factory: Factory
-    private let viewModel: SearchResultViewModel
+    private let viewModel: SearchResultViewModelType
     private let disposeBag = DisposeBag()
-    private let searchController = UISearchController(searchResultsController: nil)
 
     // MARK: - IBOutlets
 
@@ -27,7 +27,7 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
 
     // MARK: - Initializer
 
-    init(factory: Factory, viewModel: SearchResultViewModel) {
+    init(factory: Factory, viewModel: SearchResultViewModelType) {
         self.factory = factory
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -43,24 +43,41 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.searchController.obscuresBackgroundDuringPresentation = false
-        self.navigationItem.searchController = self.searchController
+        self.bind(to: self.viewModel)
 
-        // 初期化
-        self.searchController.searchBar.text = self.viewModel.query.value
+        self.viewModel.inputs.loaded.accept(())
+    }
 
-        self.searchController.searchBar
-            .rx.text.bind(to: self.viewModel.query)
-            .disposed(by: self.disposeBag)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
-        self.searchController.searchBar
-            .rx.searchButtonClicked.subscribe(onNext: { [weak self] _ in
-                self?.pushResultViewController()
-            })
-            .disposed(by: self.disposeBag)
+        self.setupNavigationBar()
+    }
 
-        self.viewModel.items
-            .bind(to: self.tableView.rx.items(cellIdentifier: ContentContainerTableView.reuseIdentifier)) { _, element, cell in
+    // MARK: - Private Methods
+
+    private func setupNavigationBar() {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
+        self.navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: nil, action: nil)
+
+        let titleView = SearchResultTitleView(frame: .init(origin: .zero,
+                                                           size: self.navigationController?.navigationBar.frame.size ?? .zero))
+        titleView.title = self.viewModel.outputs.searchedQuery
+        titleView.delegate = self
+        titleView.translatesAutoresizingMaskIntoConstraints = true
+        titleView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        self.navigationItem.titleView = titleView
+    }
+}
+
+extension SearchResultViewController {
+    // MARK: - Binding
+
+    func bind(to dependency: Dependency) {
+        dependency.outputs.items
+            .drive(self.tableView.rx.items(cellIdentifier: ContentContainerTableView.reuseIdentifier)) { _, element, cell in
                 guard let cell = cell as? ContentContainer else { return }
                 cell.title = element.title
                 if let thumbnail = element.thumbnail.medium {
@@ -73,17 +90,6 @@ class SearchResultViewController: UIViewController, SearchResultViewControllerPr
             .disposed(by: self.disposeBag)
 
         self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
-
-        self.viewModel.doSearch()
-    }
-
-    // MARK: - Methods
-
-    func pushResultViewController() {
-        if let query = self.viewModel.query.value {
-            let viewController = self.factory.makeSearchResultViewController(query: query)
-            self.navigationController?.pushViewController(viewController, animated: true)
-        }
     }
 }
 
@@ -92,5 +98,13 @@ extension SearchResultViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         ContentContainer.preferredHeight
+    }
+}
+
+extension SearchResultViewController: SearchResultTitleViewDelegate {
+    // MARK: - SearchResultTitleViewDelegate
+
+    func didTapTitle() {
+        print(#function)
     }
 }

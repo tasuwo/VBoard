@@ -3,15 +3,44 @@
 //
 
 import Domain
+import RxCocoa
 import RxRelay
 import RxSwift
 
-class SearchResultViewModel {
-    private let service: SearchServiceProtocol
+protocol SearchResultViewModelType {
+    var inputs: SearchResultViewModelInputs { get }
+    var outputs: SearchResultViewModelOutputs { get }
+}
 
-    private(set) var query: BehaviorRelay<String?>
+protocol SearchResultViewModelInputs {
+    var loaded: PublishRelay<Void> { get }
+}
+
+protocol SearchResultViewModelOutputs {
+    var searchedQuery: String { get }
+    var items: Driver<[ListingVideo]> { get }
+}
+
+class SearchResultViewModel: SearchResultViewModelType, SearchResultViewModelInputs, SearchResultViewModelOutputs {
+    // MARK: - SearchResultViewModelType
+
+    var inputs: SearchResultViewModelInputs { self }
+    var outputs: SearchResultViewModelOutputs { self }
+
+    // MARK: - SearchResultViewModelInputs
+
+    var loaded: PublishRelay<Void>
+
+    // MARK: - SearchResultViewModelOutputs
+
     let searchedQuery: String
-    private(set) var items: BehaviorRelay<[ListingVideo]> = BehaviorRelay(value: [])
+    var items: Driver<[ListingVideo]>
+
+    // MARK: - Privates
+
+    private(set) var _items: BehaviorRelay<[ListingVideo]> = BehaviorRelay(value: [])
+
+    private let service: SearchServiceProtocol
 
     private let disposeBag = DisposeBag()
 
@@ -19,8 +48,25 @@ class SearchResultViewModel {
 
     init(service: SearchServiceProtocol, query: String) {
         self.service = service
-        self.query = BehaviorRelay(value: query)
+
+        // MARK: Inputs
+
+        self.loaded = .init()
+
+        // MARK: Outputs
+
         self.searchedQuery = query
+        self.items = self._items.asDriver()
+
+        // MARK: Binding
+
+        self.loaded
+            .compactMap { [weak self] _ -> SearchServiceCommand? in
+                guard let self = self else { return nil }
+                return .search(query: .init(query: self.searchedQuery))
+            }
+            .bind(to: self.service.command)
+            .disposed(by: self.disposeBag)
 
         self.service.state
             .compactMap { state in
@@ -32,15 +78,7 @@ class SearchResultViewModel {
                     return nil
                 }
             }
-            .bind(to: self.items)
+            .bind(to: self._items)
             .disposed(by: self.disposeBag)
-    }
-
-    // MARK: - Methods
-
-    func doSearch() {
-        if let query = self.query.value {
-            self.service.command.accept(.search(query: .init(query: query)))
-        }
     }
 }
