@@ -14,11 +14,13 @@ protocol SearchResultViewModelType {
 
 protocol SearchResultViewModelInputs {
     var loaded: PublishRelay<Void> { get }
+    var selected: PublishRelay<Int> { get }
 }
 
 protocol SearchResultViewModelOutputs {
     var searchedQuery: String { get }
     var items: Driver<[ListingVideo]> { get }
+    var played: Signal<ListingVideo> { get }
 }
 
 class SearchResultViewModel: SearchResultViewModelType, SearchResultViewModelInputs, SearchResultViewModelOutputs {
@@ -29,16 +31,19 @@ class SearchResultViewModel: SearchResultViewModelType, SearchResultViewModelInp
 
     // MARK: - SearchResultViewModelInputs
 
+    var selected: PublishRelay<Int>
     var loaded: PublishRelay<Void>
 
     // MARK: - SearchResultViewModelOutputs
 
     let searchedQuery: String
     var items: Driver<[ListingVideo]>
+    var played: Signal<ListingVideo>
 
     // MARK: - Privates
 
     private(set) var _items: BehaviorRelay<[ListingVideo]> = BehaviorRelay(value: [])
+    private(set) var _played: PublishRelay<ListingVideo> = .init()
 
     private let service: SearchServiceProtocol
 
@@ -51,14 +56,24 @@ class SearchResultViewModel: SearchResultViewModelType, SearchResultViewModelInp
 
         // MARK: Inputs
 
+        self.selected = .init()
         self.loaded = .init()
 
         // MARK: Outputs
 
         self.searchedQuery = query
         self.items = self._items.asDriver()
+        self.played = self._played.asSignal()
 
         // MARK: Binding
+
+        self.selected
+            .compactMap { [weak self] index -> ListingVideo? in
+                guard self?._items.value.indices.contains(index) == true else { return nil }
+                return self?._items.value[index]
+            }
+            .bind(to: self._played)
+            .disposed(by: self.disposeBag)
 
         self.loaded
             .compactMap { [weak self] _ -> SearchServiceCommand? in

@@ -76,6 +76,20 @@ extension SearchResultViewController {
     // MARK: - Binding
 
     func bind(to dependency: Dependency) {
+        self.tableView.rx
+            .setDelegate(self)
+            .disposed(by: self.disposeBag)
+
+        // MARK: Inputs
+
+        self.tableView.rx
+            .itemSelected
+            .map({ $0.row })
+            .bind(to: dependency.inputs.selected)
+            .disposed(by: self.disposeBag)
+
+        // MARK: Outputs
+
         dependency.outputs.items
             .drive(self.tableView.rx.items(cellIdentifier: ContentContainerTableView.reuseIdentifier)) { _, element, cell in
                 guard let cell = cell as? ContentContainer else { return }
@@ -89,7 +103,12 @@ extension SearchResultViewController {
             }
             .disposed(by: self.disposeBag)
 
-        self.tableView.rx.setDelegate(self).disposed(by: self.disposeBag)
+        dependency.outputs.played
+            .emit(onNext: { _ in
+                // TODO:
+                print(#function)
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
