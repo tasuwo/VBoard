@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://unpkg.com/sanitize.css" rel="stylesheet" />
+  </head>
+  <body>
+    <iframe
+      id="player"
+      frameborder="0"
+      allowfullscreen="1"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      title="YouTube video player"
+      src="https://www.youtube.com/embed/%@?enablejsapi=1&widgetid=1&playsinline=1"
+    ></iframe>
+
+    <script>
+      var player;
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("player", {
+          autoplay: 0,
+          controls: 0,
+          rel: 0,
+          fs: 0,
+          modestbranding: 1,
+          events: {
+            onReady: onReady,
+            onStateChange: onStateChange,
+            onPlaybackQualityChange: onPlaybackQualityChange,
+            onPlaybackRateChange: onPlaybackRateChange,
+            onError: onError,
+          },
+        });
+
+        player.setSize(window.innerWidth, window.innerHeight);
+
+        window.setInterval(updateCurrentTime, 500);
+        window.setInterval(updateBufferingRate, 500);
+      }
+
+      // Delegates
+
+      function onReady(event) {
+        try {
+          webkit.messageHandlers.ready.postMessage(event.data);
+
+          webkit.messageHandlers.metaFetched.postMessage({
+            // Context
+            volume: player.getVolume(),
+            rate: player.getPlaybackRate(),
+            // Meta
+            duration: player.getDuration(),
+            availableRates: player.getAvailablePlaybackRates(),
+          });
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function onStateChange(event) {
+        try {
+          webkit.messageHandlers.stateChanged.postMessage(event.data);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function onPlaybackQualityChange(event) {
+        try {
+          webkit.messageHandlers.qualityChanged.postMessage(event.data);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function onPlaybackRateChange(event) {
+        try {
+          webkit.messageHandlers.rateChanged.postMessage(event.data);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function onError() {
+        try {
+          webkit.messageHandlers.error.postMessage(event.data);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function updateCurrentTime() {
+        const time = player.getCurrentTime();
+        try {
+          webkit.messageHandlers.playbackTimeUpdated.postMessage(time);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+
+      function updateBufferingRate() {
+        const ratio = player.getVideoLoadedFraction();
+        try {
+          webkit.messageHandlers.bufferUpdated.postMessage(ratio);
+        } catch (err) {
+          console.log("Can not reach native code");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -36,6 +36,7 @@
 		2C4BF942243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4BF941243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard */; };
 		2C4BF948243CE0C5000AFE6C /* SearchEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4BF947243CE0C5000AFE6C /* SearchEntryViewController.swift */; };
 		2C4BF94A243CE0D1000AFE6C /* SearchEntryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4BF949243CE0D1000AFE6C /* SearchEntryViewController.storyboard */; };
+		2C4BF94F243E2242000AFE6C /* Player.html in Resources */ = {isa = PBXBuildFile; fileRef = 2C4BF94E243E2242000AFE6C /* Player.html */; };
 		2C53237324387BBF0055811B /* ContentContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C53237224387BBF0055811B /* ContentContainerViewController.swift */; };
 		2C53237524387BE10055811B /* ContentContainerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C53237424387BE10055811B /* ContentContainerViewController.storyboard */; };
 		2C60AF4123CCB1CD00A909EA /* AppRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */; };
@@ -70,6 +71,19 @@
 		2CA91408242F5E2B0051C04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA91407242F5E2B0051C04C /* Assets.xcassets */; };
 		2CA9140B242F5E2B0051C04C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA91409242F5E2B0051C04C /* LaunchScreen.storyboard */; };
 		2CA91413242F63DC0051C04C /* ContentThumbnailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA91412242F63DC0051C04C /* ContentThumbnailViewController.storyboard */; };
+		2CC7EAB3243E35ED00C391DF /* VBoardPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAB2243E35ED00C391DF /* VBoardPlayerView.swift */; };
+		2CC7EAB5243E35FB00C391DF /* VBoardPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC7EAB4243E35FB00C391DF /* VBoardPlayerView.xib */; };
+		2CC7EABA243E395000C391DF /* VBoardPlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAB9243E395000C391DF /* VBoardPlayerState.swift */; };
+		2CC7EABE243E3B0B00C391DF /* YouTubeIFrameApiBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EABD243E3B0B00C391DF /* YouTubeIFrameApiBridge.swift */; };
+		2CC7EAC0243E3CB200C391DF /* VBoardPlayerPlaybackError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EABF243E3CB200C391DF /* VBoardPlayerPlaybackError.swift */; };
+		2CC7EAC2243E41D400C391DF /* VBoardPlayerObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAC1243E41D400C391DF /* VBoardPlayerObserver.swift */; };
+		2CC7EACB243F6BF200C391DF /* VBoardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EACA243F6BF200C391DF /* VBoardPlayer.swift */; };
+		2CC7EACD243F6CE100C391DF /* VBoardPlayerQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EACC243F6CE100C391DF /* VBoardPlayerQuality.swift */; };
+		2CC7EACF243F6CF100C391DF /* VBoardPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EACE243F6CF100C391DF /* VBoardPlayerProtocol.swift */; };
+		2CC7EAD1243F70BB00C391DF /* VBoardPlayerCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAD0243F70BB00C391DF /* VBoardPlayerCommand.swift */; };
+		2CC7EAD3243F70D900C391DF /* VBoardPlayerMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAD2243F70D900C391DF /* VBoardPlayerMeta.swift */; };
+		2CC7EAD5243F75EB00C391DF /* VBoardPlayerCommandHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAD4243F75EB00C391DF /* VBoardPlayerCommandHandler.swift */; };
+		2CC7EAD8243F7F0100C391DF /* VBoardPlayerDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7EAD7243F7F0100C391DF /* VBoardPlayerDataSourceDelegate.swift */; };
 		2CD9D58D23CCADBE0061594E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9D58C23CCADBE0061594E /* AppDelegate.swift */; };
 		2CD9D59123CCADBE0061594E /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD9D59023CCADBE0061594E /* AppRootViewController.swift */; };
 		2CD9D59623CCADC10061594E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD9D59523CCADC10061594E /* Assets.xcassets */; };
@@ -250,6 +264,7 @@
 		2C4BF941243CCF7C000AFE6C /* SearchResultTitleViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResultTitleViewController.storyboard; sourceTree = "<group>"; };
 		2C4BF947243CE0C5000AFE6C /* SearchEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntryViewController.swift; sourceTree = "<group>"; };
 		2C4BF949243CE0D1000AFE6C /* SearchEntryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchEntryViewController.storyboard; sourceTree = "<group>"; };
+		2C4BF94E243E2242000AFE6C /* Player.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Player.html; sourceTree = "<group>"; };
 		2C53237224387BBF0055811B /* ContentContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainerViewController.swift; sourceTree = "<group>"; };
 		2C53237424387BE10055811B /* ContentContainerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentContainerViewController.storyboard; sourceTree = "<group>"; };
 		2C60AF4023CCB1CD00A909EA /* AppRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootTabBarController.swift; sourceTree = "<group>"; };
@@ -288,6 +303,19 @@
 		2CA9140A242F5E2B0051C04C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA9140C242F5E2B0051C04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CA91412242F63DC0051C04C /* ContentThumbnailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContentThumbnailViewController.storyboard; sourceTree = "<group>"; };
+		2CC7EAB2243E35ED00C391DF /* VBoardPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerView.swift; sourceTree = "<group>"; };
+		2CC7EAB4243E35FB00C391DF /* VBoardPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VBoardPlayerView.xib; sourceTree = "<group>"; };
+		2CC7EAB9243E395000C391DF /* VBoardPlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerState.swift; sourceTree = "<group>"; };
+		2CC7EABD243E3B0B00C391DF /* YouTubeIFrameApiBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = YouTubeIFrameApiBridge.swift; path = ../YouTubeIFrameApiBridge.swift; sourceTree = "<group>"; };
+		2CC7EABF243E3CB200C391DF /* VBoardPlayerPlaybackError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VBoardPlayerPlaybackError.swift; path = ../VBoardPlayerPlaybackError.swift; sourceTree = "<group>"; };
+		2CC7EAC1243E41D400C391DF /* VBoardPlayerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VBoardPlayerObserver.swift; path = VBoard/src/Player/VBoardPlayerObserver.swift; sourceTree = SOURCE_ROOT; };
+		2CC7EACA243F6BF200C391DF /* VBoardPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayer.swift; sourceTree = "<group>"; };
+		2CC7EACC243F6CE100C391DF /* VBoardPlayerQuality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VBoardPlayerQuality.swift; path = ../VBoardPlayerQuality.swift; sourceTree = "<group>"; };
+		2CC7EACE243F6CF100C391DF /* VBoardPlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VBoardPlayerProtocol.swift; sourceTree = "<group>"; };
+		2CC7EAD0243F70BB00C391DF /* VBoardPlayerCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerCommand.swift; sourceTree = "<group>"; };
+		2CC7EAD2243F70D900C391DF /* VBoardPlayerMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerMeta.swift; sourceTree = "<group>"; };
+		2CC7EAD4243F75EB00C391DF /* VBoardPlayerCommandHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerCommandHandler.swift; sourceTree = "<group>"; };
+		2CC7EAD7243F7F0100C391DF /* VBoardPlayerDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VBoardPlayerDataSourceDelegate.swift; sourceTree = "<group>"; };
 		2CD9D58923CCADBE0061594E /* VBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD9D58C23CCADBE0061594E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CD9D59023CCADBE0061594E /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
@@ -724,6 +752,58 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		2CC7EAB1243E35DC00C391DF /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				2CC7EAC9243F6AFF00C391DF /* VBoardPlayer */,
+				2CC7EAB6243E372800C391DF /* Bridge */,
+				2CC7EAB2243E35ED00C391DF /* VBoardPlayerView.swift */,
+				2CC7EAB4243E35FB00C391DF /* VBoardPlayerView.xib */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		2CC7EAB6243E372800C391DF /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				2CC7EAD9243F7FBA00C391DF /* ValueObject */,
+				2CC7EAD4243F75EB00C391DF /* VBoardPlayerCommandHandler.swift */,
+				2CC7EAD7243F7F0100C391DF /* VBoardPlayerDataSourceDelegate.swift */,
+				2CC7EABD243E3B0B00C391DF /* YouTubeIFrameApiBridge.swift */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		2CC7EAC9243F6AFF00C391DF /* VBoardPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				2CC7EADA243F852E00C391DF /* ValueObject */,
+				2CC7EACE243F6CF100C391DF /* VBoardPlayerProtocol.swift */,
+				2CC7EACA243F6BF200C391DF /* VBoardPlayer.swift */,
+				2CC7EAC1243E41D400C391DF /* VBoardPlayerObserver.swift */,
+			);
+			path = VBoardPlayer;
+			sourceTree = "<group>";
+		};
+		2CC7EAD9243F7FBA00C391DF /* ValueObject */ = {
+			isa = PBXGroup;
+			children = (
+				2CC7EAD2243F70D900C391DF /* VBoardPlayerMeta.swift */,
+				2CC7EAB9243E395000C391DF /* VBoardPlayerState.swift */,
+				2CC7EAD0243F70BB00C391DF /* VBoardPlayerCommand.swift */,
+			);
+			path = ValueObject;
+			sourceTree = "<group>";
+		};
+		2CC7EADA243F852E00C391DF /* ValueObject */ = {
+			isa = PBXGroup;
+			children = (
+				2CC7EACC243F6CE100C391DF /* VBoardPlayerQuality.swift */,
+				2CC7EABF243E3CB200C391DF /* VBoardPlayerPlaybackError.swift */,
+			);
+			path = ValueObject;
+			sourceTree = "<group>";
+		};
 		2CD9D58023CCADBE0061594E = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +865,7 @@
 				2CD9D59523CCADC10061594E /* Assets.xcassets */,
 				2CD9D59723CCADC10061594E /* LaunchScreen.storyboard */,
 				2C60AF5823CCC70D00A909EA /* Localizable.strings */,
+				2C4BF94E243E2242000AFE6C /* Player.html */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -792,6 +873,7 @@
 		2CD9D5AF23CCAE0E0061594E /* src */ = {
 			isa = PBXGroup;
 			children = (
+				2CC7EAB1243E35DC00C391DF /* Player */,
 				2CD9D5B223CCAFDC0061594E /* Context */,
 				2CD9D5B523CCB02D0061594E /* Controller */,
 				2C05418323D74F57004974B4 /* ViewModel */,
@@ -1275,6 +1357,8 @@
 				2CD9D59923CCADC10061594E /* LaunchScreen.storyboard in Resources */,
 				2C60AF5623CCC70D00A909EA /* Localizable.strings in Resources */,
 				2C05417B23D69DEC004974B4 /* SearchEntryViewController.xib in Resources */,
+				2CC7EAB5243E35FB00C391DF /* VBoardPlayerView.xib in Resources */,
+				2C4BF94F243E2242000AFE6C /* Player.html in Resources */,
 				2C05418C23D75ADC004974B4 /* SearchResultViewController.xib in Resources */,
 				2CD9D59623CCADC10061594E /* Assets.xcassets in Resources */,
 			);
@@ -1697,17 +1781,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC7EAD8243F7F0100C391DF /* VBoardPlayerDataSourceDelegate.swift in Sources */,
+				2CC7EACD243F6CE100C391DF /* VBoardPlayerQuality.swift in Sources */,
+				2CC7EAB3243E35ED00C391DF /* VBoardPlayerView.swift in Sources */,
+				2CC7EAC0243E3CB200C391DF /* VBoardPlayerPlaybackError.swift in Sources */,
 				2CD9D5B423CCAFF30061594E /* Factory.swift in Sources */,
 				2CE2BEAF243A35DF001BC9E7 /* Assets.swift in Sources */,
 				2C05418A23D75515004974B4 /* SearchResultViewModel.swift in Sources */,
 				2CE2BEAE243A35DF001BC9E7 /* Strings.swift in Sources */,
 				2C60AF5023CCC2D900A909EA /* SearchEntryViewController.swift in Sources */,
 				2C05418823D754BB004974B4 /* SearchResultViewController.swift in Sources */,
+				2CC7EACF243F6CF100C391DF /* VBoardPlayerProtocol.swift in Sources */,
 				2CD9D59123CCADBE0061594E /* AppRootViewController.swift in Sources */,
+				2CC7EACB243F6BF200C391DF /* VBoardPlayer.swift in Sources */,
+				2CC7EAD1243F70BB00C391DF /* VBoardPlayerCommand.swift in Sources */,
 				2CD9D58D23CCADBE0061594E /* AppDelegate.swift in Sources */,
 				2C60AF4123CCB1CD00A909EA /* AppRootTabBarController.swift in Sources */,
+				2CC7EAC2243E41D400C391DF /* VBoardPlayerObserver.swift in Sources */,
 				2C05418623D74F7D004974B4 /* SearchEntryViewModel.swift in Sources */,
+				2CC7EABA243E395000C391DF /* VBoardPlayerState.swift in Sources */,
+				2CC7EAD3243F70D900C391DF /* VBoardPlayerMeta.swift in Sources */,
 				2C60AF4323CCB38200A909EA /* DependencyContainer.swift in Sources */,
+				2CC7EAD5243F75EB00C391DF /* VBoardPlayerCommandHandler.swift in Sources */,
+				2CC7EABE243E3B0B00C391DF /* YouTubeIFrameApiBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
